@@ -1,0 +1,33 @@
+<h1>New Dojo</h1>
+<br>
+<form action="/dojos/create" method="post">
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+    <table>
+        <tr>
+            <td>Branch:</td>
+            <td> <input type="text" name="dojo[branch]"> </td>
+        </tr>
+        <tr>
+            <td>Street:</td>
+            <td> <input type="text" name="dojo[street]"> </td>
+        </tr>
+        <tr>
+            <td>City:</td>
+            <td> <input type="text" name="dojo[city]"> </td>
+        </tr>
+        <tr>
+            <td>State:</td>
+            <td> <input type="text" name="dojo[state]"> </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td> <input type="submit" value="create"> </td>
+        </tr>
+    </table>
+</form>
+<a href="/dojos">Go Back</a>
+<% if @errors %>
+    <% @errors.each do |error| %>
+        <p style="color:red"><%= error%></p>
+    <% end %>
+<% end %>
